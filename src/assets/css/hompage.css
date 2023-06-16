@@ -6,7 +6,7 @@
 
 .container {
 
-    height: 800px;
+    height: 900px;
     width: 100%;
     position: relative;
     display: flex;
@@ -96,11 +96,13 @@
 
 .box h3 {
     margin: 10px 0px 5px 0px;
+    cursor: pointer;
 }
 
 .box .box-img {
     width: 100%;
     aspect-ratio: 7/9;
+    cursor: pointer;
 }
 
 .box .box-img img {
@@ -115,6 +117,10 @@
     transform: translateY(-10px);
     transition: 0.3s;
     filter: brightness(1.1);
+}
+
+.rating {
+    color: #172b41;
 }
 
 /* paginate */
@@ -300,6 +306,9 @@
         font-size: 0.8rem;
     }
 
+    .btn {
+        padding: 5px;
+    }
 
 }
 

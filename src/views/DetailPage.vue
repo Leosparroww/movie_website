@@ -46,7 +46,11 @@
             <i class="fa-solid fa-star" style="color: #ffc800"></i>
           </li>
           <li>{{ movieDetails.runtime }}</li>
-          <li>genre</li>
+          <li class="genres">
+            <span v-for="(g, index) in movieGenres" :key="index"
+              >{{ g }},
+            </span>
+          </li>
           <li>{{ movieDetails.year }}</li>
         </ul>
       </div>
@@ -66,12 +70,16 @@
 
     <div class="d-trailer">
       <iframe
+        v-if="movieDetails.yt_trailer_code != ''"
         :src="'https://www.youtube.com/embed/' + movieDetails.yt_trailer_code"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       ></iframe>
+      <span v-else-if="movieDetails.yt_trailer_code == ''"
+        >No trailer available right now</span
+      >
     </div>
     <div class="d-download">
       <div class="d-torrent">

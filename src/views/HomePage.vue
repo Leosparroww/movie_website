@@ -1,5 +1,6 @@
 <template>
   <div>
+    <a href="#home" id="#ovies"></a>
     <!-- cover start -->
     <section class="home" id="home">
       <div class="container">
@@ -17,12 +18,14 @@
               <span class="text btntext">Watch Now</span>
             </button></a
           >
+
           <a
             href="https://www.youtube.com/watch?v=uYPbbksJxIg"
             target="_blank"
             class="play"
             ><i class="bx bx-play"></i
           ></a>
+          <span></span>
         </div>
       </div>
     </section>
@@ -36,17 +39,20 @@
       <!-- movie container -->
       <div class="movies-container">
         <!-- Movies 1 -->
-        <div
-          class="box"
-          v-for="(list, index) in movieLists"
-          :key="index"
-          @click="detailsPage(list.id)"
-        >
-          <div class="box-img">
+        <div class="box" v-for="(list, index) in movieLists" :key="index">
+          <div class="box-img" @click="detailsPage(list.id)">
             <img :src="list.large_cover_image" alt="" />
           </div>
-          <h3>{{ list.title }}</h3>
-          <span> {{ list.runtime }}min|action </span>
+          <h3 @click="detailsPage(list.id)">{{ list.title }}</h3>
+          <span>
+            <span v-if="list.runtime != 0"> {{ list.runtime }}</span>
+            <span v-else-if="list.runtime == 0">100</span>
+            &nbsp;min&emsp;|&emsp;Rating
+            <span class="rating" v-if="list.rating != 0">{{
+              list.rating
+            }}</span>
+            <span v-else-if="list.rating == 0">100</span></span
+          >
         </div>
         <!-- movie end -->
       </div>
@@ -55,11 +61,11 @@
     <div class="pagi">
       <span
         ><vue-awesome-paginate
-          class="pgi"
+          class="pagi"
           :total-items="movieCount"
           v-model="currentPage"
           :items-per-page="20"
-          :max-pages-shown="4"
+          :max-pages-shown="3"
           first-page-button="true"
           paginate-buttons-class="btn"
           active-page-class="btn-active"

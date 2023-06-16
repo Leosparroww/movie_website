@@ -43,22 +43,23 @@ export default {
           console.log(error);
         });
     },
-    upComingMovies() {
-      axios
-        .get("https://yts.mx/api/v2/list_upcoming.json")
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
+    // upComingMovies() {
+    //   axios
+    //     .get("https://yts.mx/api/v2/list_upcoming.json")
+    //     .then((response) => {
+    //       console.log(response);
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //     });
+    // },
     detailsPage(key) {
       let movieId = key;
       this.$router.push({
         name: "details",
         query: {
           id: movieId,
+          page: this.currentPage,
         },
       });
     },
@@ -73,7 +74,9 @@ export default {
   },
 
   mounted() {
-    this.upComingMovies();
+    if (this.$route.query.page != undefined) {
+      this.currentPage = this.$route.query.page * 1;
+    }
     this.getMovieList();
     this.totalMovies();
   },
