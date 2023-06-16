@@ -8,8 +8,12 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^1.4.0",
+    "v-pagination-3": "^0.1.7",
     "vue": "^3.2.13",
+    "vue-awesome-paginate": "^1.1.46",
     "vue-router": "^4.0.3",
+    "vuejs-paginate-next": "^1.0.2",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
