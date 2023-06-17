@@ -30,12 +30,13 @@
       </div>
     </section>
     <!-- cover end -->
+    <section class="loading" v-if="loading == true">
+      <div class="loader"></div>
+      <div class="loader-text">Loading . . .</div>
+    </section>
 
-    <!-- movie start -->
-
-    <section id="movies" class="movies">
+    <section id="movies" class="movies" v-else-if="loading == false">
       <h2 class="heading">Opening This week</h2>
-
       <!-- movie container -->
       <div class="movies-container">
         <!-- Movies 1 -->
@@ -56,24 +57,23 @@
         </div>
         <!-- movie end -->
       </div>
+      <div class="pagi">
+        <span
+          ><vue-awesome-paginate
+            class="pagi"
+            :total-items="movieCount"
+            v-model="currentPage"
+            :items-per-page="20"
+            :max-pages-shown="3"
+            first-page-button="true"
+            paginate-buttons-class="btn"
+            active-page-class="btn-active"
+            back-button-class="back-btn"
+            next-button-class="next-btn"
+            @click="paginate()"
+        /></span>
+      </div>
     </section>
-
-    <div class="pagi">
-      <span
-        ><vue-awesome-paginate
-          class="pagi"
-          :total-items="movieCount"
-          v-model="currentPage"
-          :items-per-page="20"
-          :max-pages-shown="3"
-          first-page-button="true"
-          paginate-buttons-class="btn"
-          active-page-class="btn-active"
-          back-button-class="back-btn"
-          next-button-class="next-btn"
-          @click="paginate()"
-      /></span>
-    </div>
   </div>
 </template>
 

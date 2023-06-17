@@ -14,6 +14,7 @@ export default {
       movieLists: {},
       movieCount: 0,
       currentPage: 1,
+      loading: true,
     };
   },
   computed: {
@@ -71,13 +72,18 @@ export default {
         left: 0,
       });
     },
+    loader() {
+      setTimeout(() => {
+        this.loading = false;
+      }, 1500);
+    },
   },
-
   mounted() {
     if (this.$route.query.page != undefined) {
       this.currentPage = this.$route.query.page * 1;
     }
     this.getMovieList();
     this.totalMovies();
+    this.loader();
   },
 };
