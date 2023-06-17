@@ -29,6 +29,7 @@ export default {
           //     console.log(response.data.data.movies[i]);
           //   }
           this.movieLists = response.data.data.movies;
+          this.loader();
         })
         .catch((error) => {
           console.log(error);
@@ -84,6 +85,5 @@ export default {
     }
     this.getMovieList();
     this.totalMovies();
-    this.loader();
   },
 };
