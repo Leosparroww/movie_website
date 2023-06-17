@@ -2,10 +2,10 @@
 
 
 .details {
+
     padding: 20px;
     width: 50%;
-    margin: auto;
-    margin-top: 50px;
+    margin: 50px auto;
     background-color: #867575;
 }
 
@@ -157,6 +157,7 @@ iframe {
 @media(max-width:800px) {
     .details {
         margin: 0;
+        margin-bottom: 50px;
         width: 100%;
     }
 
