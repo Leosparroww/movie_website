@@ -52,7 +52,7 @@
             <span class="rating" v-if="list.rating != 0">{{
               list.rating
             }}</span>
-            <span v-else-if="list.rating == 0">100</span></span
+            <span v-else-if="list.rating == 0" class="rating">5.5</span></span
           >
         </div>
         <!-- movie end -->
