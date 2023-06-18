@@ -119,20 +119,24 @@
     filter: brightness(1.1);
 }
 
-.rating {
-    color: #172b41;
+.value {
+    color: #26325a;
 }
 
 /* paginate */
+.pagii {
+    box-shadow: 0px 0px 5px 0.1px rgba(0, 0, 0, 0.77);
+}
+
 .pagi {
     text-align: center;
     margin: auto;
     margin: 50px auto;
+
 }
 
 .pagi>span {
-    box-shadow: 5px 5px 14px #7c84a0,
-        -5px -5px 14px #f2ffff;
+
     width: 100%;
 
 }

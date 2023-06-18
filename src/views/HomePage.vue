@@ -46,13 +46,13 @@
           </div>
           <h3 @click="detailsPage(list.id)">{{ list.title }}</h3>
           <span>
-            <span v-if="list.runtime != 0"> {{ list.runtime }}</span>
-            <span v-else-if="list.runtime == 0">100</span>
+            <span v-if="list.runtime != 0" class="value">
+              {{ list.runtime }}</span
+            >
+            <span v-else-if="list.runtime == 0" class="value">100</span>
             &nbsp;min&emsp;|&emsp;Rating
-            <span class="rating" v-if="list.rating != 0">{{
-              list.rating
-            }}</span>
-            <span v-else-if="list.rating == 0" class="rating">5.5</span></span
+            <span class="value" v-if="list.rating != 0">{{ list.rating }}</span>
+            <span v-else-if="list.rating == 0" class="value">5.5</span></span
           >
         </div>
         <!-- movie end -->
@@ -60,7 +60,7 @@
       <div class="pagi">
         <span
           ><vue-awesome-paginate
-            class="pagi"
+            class="pagii"
             :total-items="movieCount"
             v-model="currentPage"
             :items-per-page="20"

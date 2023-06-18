@@ -40,12 +40,20 @@
           <li>|</li>
           <li>|</li>
         </ul>
-        <ul>
+        <ul class="value">
           <li>
-            {{ movieDetails.rating }}
+            <span v-if="movieDetails.rating != 0">{{
+              movieDetails.rating
+            }}</span>
+            <span v-else-if="movieDetails.rating == 0">5.5</span>
             <i class="fa-solid fa-star" style="color: #ffc800"></i>
           </li>
-          <li>{{ movieDetails.runtime }}</li>
+          <li>
+            <span v-if="movieDetails.runtime != 0">
+              {{ movieDetails.runtime }}</span
+            >
+            <span v-else-if="movieDetails.runtime == 0">100</span>
+          </li>
           <li class="genres">
             <span v-for="(g, index) in movieGenres" :key="index"
               >{{ g }},
