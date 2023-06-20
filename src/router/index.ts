@@ -12,7 +12,12 @@ const routes: Array<RouteRecordRaw> = [
     name: 'details',
     
     component: () => import('../views/DetailPage.vue')
-  }
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: ()=> import('../views/404Page.vue'),
+}
 ]
 
 const router = createRouter({

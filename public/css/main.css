@@ -35,7 +35,7 @@ html::-webkit-scrollbar-thumb {
 :root {
     --main-color: #3185e6;
     --text-color: #fff;
-    --bg-color: #8fc2ec;
+    --bg-color: #ffffff;
 }
 
 body {
@@ -203,7 +203,8 @@ button:hover span:nth-child(6) {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #d6dce7;
+    background-color: #b9e6f7;
+
 }
 
 .contact form .email {
@@ -211,7 +212,7 @@ button:hover span:nth-child(6) {
     outline: none;
     width: 200px;
     margin: 5px;
-    background-color: #d6dce7;
+    background-color: #b9e6f7;
 }
 
 .contact .btn {
@@ -239,7 +240,6 @@ button:hover span:nth-child(6) {
     border-radius: 50px;
     display: flex;
     align-items: center;
-    background: #ffffff;
 
 }
 
@@ -247,7 +247,7 @@ button:hover span:nth-child(6) {
     height: 50px;
     width: 50px;
     padding: 10px;
-    background: #ffffff;
+    background: #f7fdff;
     transition: 0.1;
 }
 
@@ -329,6 +329,11 @@ button:hover span:nth-child(6) {
 }
 
 @media (max-width:470px) {
+    button {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
     .footer {
         display: flex;
         flex-direction: column-reverse;

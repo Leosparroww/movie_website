@@ -49,8 +49,8 @@
             <span v-if="list.runtime != 0" class="value">
               {{ list.runtime }}</span
             >
-            <span v-else-if="list.runtime == 0" class="value">100</span>
-            &nbsp;min&emsp;|&emsp;Rating
+            <span v-else-if="list.runtime == 0" class="value">100</span>min |
+            Rating
             <span class="value" v-if="list.rating != 0">{{ list.rating }}</span>
             <span v-else-if="list.rating == 0" class="value">5.5</span></span
           >
