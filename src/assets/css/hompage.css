@@ -130,10 +130,12 @@
 
 /* paginate */
 .pagii {
+    border-radius: 10px;
     box-shadow: 0px 0px 5px 0.1px rgba(0, 0, 0, 0.77);
 }
 
 .pagi {
+    border-radius: 10%;
     text-align: center;
     margin: auto;
     margin: 50px auto;
@@ -165,11 +167,13 @@
 
 .back-btn {
     background-color: #eec290;
+    border-radius: 10px 0 0 10px;
 }
 
 .next-btn {
     background-color: #eec290;
-    ;
+    border-radius: 0 10px 10px 0;
+
 }
 
 .btn-active {
@@ -211,9 +215,7 @@
         padding: 20px 0px;
     }
 
-    .footer {
-        margin: 0 2%;
-    }
+
 }
 
 @media (max-width:900px) {

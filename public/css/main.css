@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Petit+Formal+Script&display=swap');
 
 * {
     margin: 0;
@@ -53,9 +54,9 @@ header {
     top: 0;
     display: flex;
     justify-content: space-between;
-    padding: 20px 100px;
+    padding: 10px 100px;
     transition: 0.5s;
-    background-color: #000000;
+    background-color: #7c7c7c;
     z-index: 2;
 }
 
@@ -65,6 +66,7 @@ header {
     color: var(--text-color);
     display: flex;
     align-items: center;
+    font-family: 'Kaushan Script';
 }
 
 .logo i {
@@ -178,17 +180,8 @@ button:hover span:nth-child(6) {
 
 /* contact section */
 
-.contact {
-    max-width: 968px;
-    margin: 0 auto;
-    /* background-color: red; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0px auto 30px auto;
-}
 
-.contact h2 {
+.footer h2 {
     align-items: center;
     font-size: 1.2rem;
     font-weight: 600;
@@ -196,59 +189,93 @@ button:hover span:nth-child(6) {
     margin-bottom: 10px;
 }
 
-.contact form {
-    padding: 10px;
-    background-color: var(--text-color);
+.footer form {
+    position: relative;
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #b9e6f7;
-
+    text-align: center;
 }
 
-.contact form .email {
+.footer form .email {
     border: none;
     outline: none;
     width: 200px;
-    margin: 5px;
+    padding: 10px;
     background-color: #b9e6f7;
+    border-radius: 5px;
+    width: 100%;
 }
 
-.contact .btn {
+
+.footer form a {
+    right: 0;
+    position: absolute;
+    color: #000000;
+    padding: 10px;
     font-weight: 500;
     text-transform: uppercase;
     outline: none;
     border: none;
     cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+    font-size: 1rem
 }
 
+
+.footer form a:hover::after {
+    content: 'send';
+
+}
 
 /* footer start */
 
 .footer {
-    max-width: 968px;
-    margin: auto;
+    margin: 0;
     display: flex;
     justify-content: space-between;
-    color: var(--text-color);
+    color: #ffffff;
+    background-color: #d1a2a2;
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    grid-template-rows: auto;
+    padding: 3% 10%;
+}
+
+
+
+.footer>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+}
+
+.footer .sakurai {
+    font-size: 1.5rem;
+}
+
+.sakurai {
+    font-family: 'Kaushan Script';
 }
 
 .social {
     display: flex;
-    gap: 0;
-    border-radius: 50px;
+    gap: 10px;
     display: flex;
     align-items: center;
 
 }
 
 .social div {
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     padding: 10px;
     background: #f7fdff;
     transition: 0.1;
+    margin: 0 0 0 0px;
+    border-radius: 5px;
 }
 
 .social svg {
@@ -256,13 +283,7 @@ button:hover span:nth-child(6) {
     height: 100%;
 }
 
-.social .fb {
-    border-radius: 50% 0 0 50%;
-}
 
-.social .tele {
-    border-radius: 0 50% 50% 0;
-}
 
 .social div:hover {
     transform: scale(1.1);
@@ -292,24 +313,26 @@ button:hover span:nth-child(6) {
 }
 
 .copyright {
-
+    background-color: #d1a2a2;
+    width: 100%;
     color: var(--text-color);
     display: flex;
     justify-content: center;
     padding: 10px 10px;
-    margin-top: 15px;
 }
 
 @media (max-width:991px) {
-
 
     .section {
         padding: 20px 0px;
     }
 
     .footer {
-        margin: 0 2%;
+        padding: 5%;
+        grid-template-columns: auto auto 30%;
     }
+
+
 }
 
 @media (max-width:900px) {
@@ -326,6 +349,17 @@ button:hover span:nth-child(6) {
         padding: 0.6rem 1.2rem;
     }
 
+
+}
+
+@media (max-width:770px) {
+    .footer {
+        grid-template-columns: auto 40%;
+    }
+
+    .footer>.footer2 {
+        display: none;
+    }
 }
 
 @media (max-width:470px) {
@@ -335,20 +369,24 @@ button:hover span:nth-child(6) {
     }
 
     .footer {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
+        text-align: center;
+        justify-content: center;
+        grid-template-columns: auto;
     }
 
-    .footer .logo {
-        margin: 20px 0px;
+    .footer>.footer3 {
+        display: none;
     }
 
-    .contact .email {
-        width: auto;
-        max-width: 100px;
+    .social div {
+        height: 40px;
+        width: 40px;
+        padding: 8px;
+        background: #f7fdff;
+        transition: 0.1;
+        margin: 0 0 0 0px;
+        border-radius: 5px;
     }
-
 
 }
 
