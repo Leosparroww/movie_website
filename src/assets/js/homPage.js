@@ -15,35 +15,47 @@ export default {
       movieCount: 0,
       currentPage: 1,
       loading: true,
+      searchKey: "",
+      sortBy: "",
+      sortingValue: "",
     };
   },
   computed: {
-    ...mapGetters(["page"]),
+    ...mapGetters(["page", "movieSearchKey"]),
   },
   methods: {
     getMovieList() {
       axios
-        .get("https://yts.mx/api/v2/list_movies.json?page=" + this.page)
+        .get(
+          "https://yts.mx/api/v2/list_movies.json?page=" +
+            this.page +
+            "&query_term=" +
+            this.movieSearchKey +
+            this.sortingValue
+        )
         .then((response) => {
-          //   for (let i = 0; i < response.data.data.movies.length; i++) {
-          //     console.log(response.data.data.movies[i]);
-          //   }
+          //Movie list
           this.movieLists = response.data.data.movies;
+          //movies count
+          this.movieCount = response.data.data.movie_count;
           this.loader();
         })
         .catch((error) => {
           console.log(error);
         });
     },
-    totalMovies() {
-      axios
-        .get("https://yts.mx/api/v2/list_movies.json/movie_count")
-        .then((response) => {
-          this.movieCount = response.data.data.movie_count;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    //search Movies
+    searchMovies() {
+      this.$store.dispatch("setSearchKey", this.searchKey);
+      this.getMovieList();
+    }, //sort by,sortBy
+    sorting() {
+      if (this.sortBy != "") {
+        this.sortingValue = "&sort_by=" + this.sortBy;
+      } else {
+        this.sortingValue = "";
+      }
+      this.getMovieList();
     },
     // upComingMovies() {
     //   axios
@@ -80,10 +92,11 @@ export default {
     },
   },
   mounted() {
-    if (this.$route.query.page != undefined) {
-      this.currentPage = this.$route.query.page * 1;
-    }
+    // if (this.$route.query.page != undefined) {
+    //   this.currentPage = this.$route.query.page * 1;
+    // }
+    this.searchKey = this.movieSearchKey;
+    this.currentPage = this.page;
     this.getMovieList();
-    this.totalMovies();
   },
 };

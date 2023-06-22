@@ -30,11 +30,59 @@
       </div>
     </section>
     <!-- cover end -->
+
+    <!-- Search & filter start-->
+    <section class="filter">
+      <div class="">
+        <select
+          name=""
+          id=""
+          class="sortBy"
+          v-model="sortBy"
+          @change="sorting()"
+        >
+          <option value="">Sort by</option>
+          <option value="year">year</option>
+          <option value="rating">rating</option>
+          <option value="like_count">populatrity</option>
+        </select>
+      </div>
+
+      <div class="searchBox">
+        <input
+          type="text"
+          @keyup.enter="searchMovies()"
+          v-model="searchKey"
+          class="search"
+        />
+        <div class="searchBtn" @click="searchMovies()">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 15L21 21"
+              stroke="#926565"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+              stroke="#926565"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </section>
+    <!-- Search & filter end-->
+    <!-- loading -->
     <section class="loading" v-if="loading == true">
       <div class="loader"></div>
       <div class="loader-text">Loading . . .</div>
     </section>
-
     <section id="movies" class="movies" v-else-if="loading == false">
       <h2 class="heading">Opening This week</h2>
       <!-- movie container -->

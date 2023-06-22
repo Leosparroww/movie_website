@@ -17,9 +17,7 @@ export default {
     homePage() {
       this.$router.push({
         name: "homePage",
-        query: {
-          page: this.page,
-        },
+        query: {},
       });
     },
   },
@@ -28,13 +26,11 @@ export default {
       top: 0,
       left: 0,
     });
-    this.page = this.$route.query.page;
     this.id = this.$route.query.id;
     axios
       .get("https://yts.mx/api/v2/movie_details.json?movie_id=" + this.id)
       .then((response) => {
         this.movieDetails = response.data.data.movie;
-        console.log((this.movieDetails = response.data.data.movie));
         this.movieGenres = response.data.data.movie.genres.splice(0, 2);
 
         this.downloadLink1 = response.data.data.movie.torrents[0].url;
