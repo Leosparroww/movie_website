@@ -10,6 +10,7 @@ export default {
       downloadLink1: {},
       downloadLink2: {},
       movieGenres: {},
+      movieCast: {},
       page: 1,
     };
   },
@@ -35,7 +36,7 @@ export default {
       .then((response) => {
         this.movieDetails = response.data.data.movie;
         this.movieGenres = response.data.data.movie.genres.splice(0, 2);
-        console.log(this.movieDetails);
+        this.movieCast = response.data.data.movie.cast;
         this.downloadLink1 = response.data.data.movie.torrents[0].url;
         this.downloadLink2 = response.data.data.movie.torrents[0].url;
       })

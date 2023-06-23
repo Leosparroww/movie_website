@@ -49,6 +49,26 @@
 .d-stat ul:first-child {
     font-size: 1.3rem;
     font-weight: bold;
+    color: #e06969;
+}
+
+.d-stat ul:nth-child(3) {
+    color: #3185e6;
+}
+
+.d-cast {
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.d-cast span:nth-child(1) {
+    color: #e06969;
+    font-weight: bold;
+}
+
+.d-cast span:not(:nth-child(1)) {
+    color: #3185e6;
 }
 
 .d-description {

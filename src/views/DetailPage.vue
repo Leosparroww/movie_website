@@ -63,7 +63,14 @@
         </ul>
       </div>
     </div>
+
     <div class="d-description">
+      <div class="d-cast">
+        <span>Cast </span>&ensp;:&ensp;
+        <span v-for="(cast, index) in movieCast" :key="index"
+          >{{ cast.name }},
+        </span>
+      </div>
       &ensp;&ensp;&ensp;{{ movieDetails.description_full }}
     </div>
 

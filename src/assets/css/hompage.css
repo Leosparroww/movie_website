@@ -78,7 +78,7 @@
     font-weight: 500px;
     text-transform: uppercase;
     border-bottom: 1px solid var(--main-color);
-    color: #c57f7f;
+    color: #d86c6c;
 }
 
 .filter {
@@ -121,7 +121,7 @@
     padding: 7px;
     border: solid 1px var(--main-color);
     border-radius: 5px;
-    color: #926565;
+    color: #d86c6c;
     font-size: 0.9rem;
 
 }
@@ -138,7 +138,7 @@
     grid-template-columns: repeat(auto-fit, minmax(180px, auto));
     gap: 1rem;
     margin-top: 2rem;
-    color: #c57f7f;
+    color: #d86c6c;
 }
 
 .box {
@@ -174,7 +174,7 @@
 }
 
 .value {
-    color: #26325a;
+    color: #3185e6;
 }
 
 /* paginate */
