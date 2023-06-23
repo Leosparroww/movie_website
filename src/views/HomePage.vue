@@ -55,7 +55,7 @@
           v-model="searchKey"
           class="search"
         />
-        <div class="searchBtn" @click="searchMovies()">
+        <div class="searchBtn" @click="searchMovies()" ref="rese">
           <svg
             viewBox="0 0 24 24"
             fill="none"

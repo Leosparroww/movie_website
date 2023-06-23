@@ -47,6 +47,11 @@ export default {
     //search Movies
     searchMovies() {
       this.$store.dispatch("setSearchKey", this.searchKey);
+      this.currentPage = 1;
+      this.$store.dispatch("setPage", this.currentPage);
+      this.loading = true;
+      //enter keyboard remove
+      document.querySelector(".search").blur();
       this.getMovieList();
     }, //sort by,sortBy
     sorting() {
@@ -88,7 +93,7 @@ export default {
     loader() {
       setTimeout(() => {
         this.loading = false;
-      }, 1000);
+      }, 500);
     },
   },
   mounted() {
