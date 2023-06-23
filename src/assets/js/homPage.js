@@ -84,11 +84,8 @@ export default {
     },
     paginate() {
       this.$store.dispatch("setPage", this.currentPage);
+      document.querySelector(".amovies").click();
       this.getMovieList();
-      window.scroll({
-        top: 700,
-        left: 0,
-      });
     },
     loader() {
       setTimeout(() => {

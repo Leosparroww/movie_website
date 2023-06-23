@@ -67,14 +67,11 @@
       &ensp;&ensp;&ensp;{{ movieDetails.description_full }}
     </div>
 
-    <!-- <div class="d-gallery">
-      <img src="../assets/img/pic1.jpg" alt="" />
-      <img src="../assets/img/pic1.jpg" alt="" />
-      <img src="../assets/img/pic1.jpg" alt="" />
-      <img src="../assets/img/pic1.jpg" alt="" />
-      <img src="../assets/img/pic1.jpg" alt="" />
-      <img src="../assets/img/pic1.jpg" alt="" />
-    </div> -->
+    <div class="d-gallery">
+      <img :src="movieDetails.medium_screenshot_image1" alt="" />
+      <img :src="movieDetails.medium_screenshot_image2" alt="" />
+      <img :src="movieDetails.medium_screenshot_image3" alt="" />
+    </div>
 
     <div class="d-trailer">
       <iframe
@@ -91,9 +88,9 @@
     </div>
     <div class="d-download">
       <div class="d-torrent">
-        <h3>Download</h3>
+        <h3>Available in:</h3>
         <div>
-          <a :href="downloadLink1">720p</a>&emsp;|&emsp;<a :href="downloadLink2"
+          <a :href="downloadLink1">720p</a>&emsp;&emsp;<a :href="downloadLink2"
             >1080p</a
           >
         </div>

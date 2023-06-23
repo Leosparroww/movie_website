@@ -90,12 +90,20 @@
     text-align: center;
 }
 
-.d-torrent:first-child {
-    margin: 20px 0px;
+.d-torrent h3 {
+    margin: 10px 0px;
 }
 
 .d-torrent a {
     color: #e06969;
+    padding: 5px;
+    border-radius: 4px;
+    border: #3185e6 solid 1px;
+}
+
+.d-torrent a:hover {
+    color: #3185e6;
+    border: #e06969 solid 1px;
 }
 
 iframe {

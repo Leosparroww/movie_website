@@ -24,15 +24,18 @@ export default {
   beforeMount() {
     window.scroll({
       top: 0,
-      left: 0,
     });
     this.id = this.$route.query.id;
     axios
-      .get("https://yts.mx/api/v2/movie_details.json?movie_id=" + this.id)
+      .get(
+        "https://yts.mx/api/v2/movie_details.json?movie_id=" +
+          this.id +
+          "&with_images=true&with_cast=true"
+      )
       .then((response) => {
         this.movieDetails = response.data.data.movie;
         this.movieGenres = response.data.data.movie.genres.splice(0, 2);
-
+        console.log(this.movieDetails);
         this.downloadLink1 = response.data.data.movie.torrents[0].url;
         this.downloadLink2 = response.data.data.movie.torrents[0].url;
       })
