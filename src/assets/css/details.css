@@ -98,7 +98,7 @@
 }
 
 .d-gallery::-webkit-scrollbar-thumb {
-    background-color: #b62f2f;
+    background-color: var(--main-color-second);
     border-radius: 10px;
     cursor: pointer;
 }
@@ -160,12 +160,15 @@ iframe {
 .d-comment {
     gap: 20px;
     width: 50%;
+
 }
 
 .d-comment>* {
     padding: 5px;
     display: block;
     margin: 20px 0px;
+    border: #3185e6 1px solid;
+    border-radius: 3px;
 }
 
 .d-share {

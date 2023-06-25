@@ -24,7 +24,7 @@ html::-webkit-scrollbar {
 /* Handle */
 
 html::-webkit-scrollbar-thumb {
-    background: var(--main-color);
+    background: var(--main-color-second);
     border-radius: 0.5rem;
 }
 
@@ -32,11 +32,12 @@ html::-webkit-scrollbar-thumb {
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(0, 204, 255);
+    background: var(--main-color);
 }
 
 :root {
     --main-color: #3185e6;
+    --main-color-second: #e06969;
     --text-color: #fff;
     --bg-color: #ffffff;
 }
