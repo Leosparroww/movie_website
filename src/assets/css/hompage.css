@@ -197,6 +197,13 @@
 
 }
 
+.noMovies {
+    display: grid;
+    place-items: center;
+    min-height: 300px;
+    color: #3185e6;
+    font-size: 1.4rem;
+}
 
 .btn {
     border-radius: 0;

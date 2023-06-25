@@ -38,6 +38,7 @@ export default {
           this.movieLists = response.data.data.movies;
           //movies count
           this.movieCount = response.data.data.movie_count;
+          console.log(this.movieCount);
           this.loader();
         })
         .catch((error) => {

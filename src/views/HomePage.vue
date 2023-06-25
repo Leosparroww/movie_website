@@ -84,8 +84,12 @@
       <div class="loader-text">Loading . . .</div>
     </section>
     <section id="movies" class="movies" v-else-if="loading == false">
-      <h2 class="heading">Opening This week</h2>
+      <h2 class="heading">Movies</h2>
       <!-- movie container -->
+      <div class="noMovies" v-if="movieCount == 0">
+        There is no movie with the name "{{ searchKey }}".
+      </div>
+
       <div class="movies-container">
         <!-- Movies 1 -->
         <div class="box" v-for="(list, index) in movieLists" :key="index">

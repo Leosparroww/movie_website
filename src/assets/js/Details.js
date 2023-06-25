@@ -22,7 +22,7 @@ export default {
       });
     },
   },
-  beforeMount() {
+  mounted() {
     window.scroll({
       top: 0,
     });
