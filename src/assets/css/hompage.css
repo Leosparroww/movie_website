@@ -75,7 +75,7 @@
     max-width: 968px;
     margin: 20px auto 10px auto;
     font-size: 1.2rem;
-    font-weight: 500px;
+    font-weight: bold;
     text-transform: uppercase;
     border-bottom: 1px solid var(--main-color);
     color: #d86c6c;
