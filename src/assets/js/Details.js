@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import style from "../css/details.css";
+import "../css/details.css";
 export default {
   name: "DetailsPage",
   data() {

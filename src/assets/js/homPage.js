@@ -1,7 +1,7 @@
 import axios from "axios";
 import Pagination from "v-pagination-3";
 import { mapGetters } from "vuex";
-import style from "../css/hompage.css";
+import "../css/hompage.css";
 
 import "vue-awesome-paginate/dist/style.css";
 export default {
