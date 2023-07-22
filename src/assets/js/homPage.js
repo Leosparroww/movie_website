@@ -16,8 +16,8 @@ export default {
       currentPage: 1,
       loading: true,
       searchKey: "",
-      sortBy: "",
-      sortingValue: "",
+      sortBy: "year",
+      sortingValue: "&sort_by=year",
     };
   },
   computed: {
@@ -38,7 +38,7 @@ export default {
           this.movieLists = response.data.data.movies;
           //movies count
           this.movieCount = response.data.data.movie_count;
-          console.log(this.movieCount);
+
           this.loader();
         })
         .catch((error) => {
@@ -59,20 +59,20 @@ export default {
       if (this.sortBy != "") {
         this.sortingValue = "&sort_by=" + this.sortBy;
       } else {
-        this.sortingValue = "";
+        this.sortingValue = "&sort_by=" + "year";
       }
       this.getMovieList();
     },
-    // upComingMovies() {
-    //   axios
-    //     .get("https://yts.mx/api/v2/list_upcoming.json")
-    //     .then((response) => {
-    //       console.log(response);
-    //     })
-    //     .catch((error) => {
-    //       console.log(error);
-    //     });
-    // },
+    upComingMovies() {
+      axios
+        .get("https://yts.mx/api/v2/list_upcoming.json")
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
     detailsPage(key) {
       let movieId = key;
       this.$router.push({
@@ -98,8 +98,10 @@ export default {
     // if (this.$route.query.page != undefined) {
     //   this.currentPage = this.$route.query.page * 1;
     // }
+
     this.searchKey = this.movieSearchKey;
     this.currentPage = this.page;
     this.getMovieList();
+    this.upComingMovies();
   },
 };
