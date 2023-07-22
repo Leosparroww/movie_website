@@ -18,6 +18,7 @@
   }
   h1 {
     width: 100%;
+    color: brown;
     text-align: center;
   }
 </style>

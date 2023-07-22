@@ -1,13 +1,10 @@
 import axios from "axios";
-import Pagination from "v-pagination-3";
+
 import { mapGetters } from "vuex";
 import "../css/hompage.css";
 
 import "vue-awesome-paginate/dist/style.css";
 export default {
-  components: {
-    Pagination,
-  },
   name: "HomePage",
   data() {
     return {
@@ -16,12 +13,12 @@ export default {
       currentPage: 1,
       loading: true,
       searchKey: "",
-      sortBy: "year",
-      sortingValue: "&sort_by=year",
+      sortBy: "",
+      sortingValue: "",
     };
   },
   computed: {
-    ...mapGetters(["page", "movieSearchKey"]),
+    ...mapGetters(["page", "movieSearchKey", "sortValue"]),
   },
   methods: {
     getMovieList() {
@@ -56,23 +53,30 @@ export default {
       this.getMovieList();
     }, //sort by,sortBy
     sorting() {
-      if (this.sortBy != "") {
-        this.sortingValue = "&sort_by=" + this.sortBy;
+      //tempo fix
+      if (this.sortValue == "" || null || undefined) {
+        this.sortBy = "year";
+      }
+      //regular
+      if (this.sortBy == "") {
+        this.sortingValue = "&sort_by=" + this.sortValue;
+        this.sortBy = this.sortValue;
       } else {
-        this.sortingValue = "&sort_by=" + "year";
+        this.$store.dispatch("setSortBy", this.sortBy);
+        this.sortingValue = "&sort_by=" + this.sortValue;
       }
       this.getMovieList();
     },
-    upComingMovies() {
-      axios
-        .get("https://yts.mx/api/v2/list_upcoming.json")
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
+    // upComingMovies() {
+    //   axios
+    //     .get("https://yts.mx/api/v2/list_upcoming.json")
+    //     .then((response) => {
+    //       console.log(response);
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //     });
+    // },
     detailsPage(key) {
       let movieId = key;
       this.$router.push({
@@ -94,14 +98,14 @@ export default {
       }, 500);
     },
   },
+
   mounted() {
     // if (this.$route.query.page != undefined) {
     //   this.currentPage = this.$route.query.page * 1;
     // }
-
+    this.sorting();
     this.searchKey = this.movieSearchKey;
     this.currentPage = this.page;
     this.getMovieList();
-    this.upComingMovies();
   },
 };
